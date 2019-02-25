@@ -1,6 +1,18 @@
 <template lang="html">
   <div class="container">
-  <h1>Your Cart</h1>
+  <h1>Items In Cart</h1>
+    <div class="row">
+        <div class="col-6">
+            <div v-if="myCart==0" class="noItem">
+                No Items In Cart
+            </div>
+        </div>
+        <div class="col-6">
+            <div v-if="myCart==0" class="noItem">
+                <router-link to="/" exact>Go To All Products</router-link>
+            </div>
+        </div>
+    </div>
    <div class="row">
     <div class="col-12" v-for="product in myCart" :key="product.id">
         <div class="CartItem bg-white shadow-sm rounded">
@@ -15,7 +27,7 @@
                         {{product.name}}
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <div>
                         &#8358;{{product.price}}
                     </div>
@@ -33,10 +45,12 @@
     <div> Total : &#8358;{{totalAmount}}</div>
   </div>
  </div>
+ 
 </template>
 
 <script>
 import Cart from "./cart.js";
+import Card from "./card.vue";
 
 export default {
    name: 'Cart',
@@ -125,6 +139,7 @@ export default {
                     img: require('./assets/img/laptop5.jpg'),
                 },
         ],
+        count: 0,
      }
   },
   computed: {
@@ -135,14 +150,14 @@ export default {
                 totalPrice += item.price;
             })
             return totalPrice;
-    }
+    },
   },
   methods: {
     removeFromCart(product) {
        var cart = this.myCart;
       cart.splice(cart.indexOf(product), 1);
-    }
-   },
+    },
+  }
 }
 </script>
 
@@ -163,4 +178,12 @@ export default {
       font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
       font-size:30px;
   }
+
+  .noItem{
+      font-size:20px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-weight: bold ;
+      color: red;
+  }
+
 </style>

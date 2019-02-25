@@ -56,7 +56,15 @@ export default {
      methods:{
       addToCart(product) {
         eventBus.$emit('addToCart', product);
-      }
+      },
+      addToCart(product){
+          this.productQuantity--;
+          eventBus.$emit('addToCart',product);
+          if(this.productQuantity < 0){
+              this.productQuantity=0;
+              alert('This product is not available at the moment');
+          }
+        },
     }
 }
 </script>
@@ -68,6 +76,10 @@ export default {
        border: green;
        margin-top: 20px;
    }
+
+.btn:hover{
+    background-color: darkgreen;
+}
 
    .product-name{
        height: 50px;

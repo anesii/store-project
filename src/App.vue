@@ -4,7 +4,9 @@
    <div class="container">
       <div class="row">
         <div class="col">
+          <transition name="fade">
    <router-view></router-view>
+          </transition>
         </div>
       </div>
    </div>
@@ -27,7 +29,7 @@ export default {
   },
   beforeCreate() {
       eventBus.$on('addToCart', (data) => {
-        console.log("adding product");
+        // console.log("adding product");
         Cart.unshift(data);
         console.log(Cart);
       });
@@ -38,4 +40,16 @@ export default {
 <style scoped>
   @import url("//cdn.materialdesignicons.com/3.0.39/css/materialdesignicons.min.css");
 
+.fade-enter-active, .fade-leave-active {
+  transition-property: opacity;
+  transition-duration: .35s;
+}
+
+.fade-enter-active {
+  transition-delay: .35s;
+}
+
+.fade-enter, .fade-leave-active {
+  opacity: 0
+}
 </style>
