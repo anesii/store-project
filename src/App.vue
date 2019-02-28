@@ -5,7 +5,7 @@
       <div class="row">
         <div class="col">
           <transition name="fade">
-   <router-view></router-view>
+            <router-view />
           </transition>
         </div>
       </div>
@@ -15,25 +15,18 @@
 
 <script>
 import header from './header.vue';
-import Cart from './cart.js';
-import {eventBus} from "./main.js";
+
 
 export default {
   components: {
     'app-header': header
   },
      computed: {
-    numberInCart() {
-      return Cart.length;
+      numberInCart() {
+      return this.$store.getters.getBigCart.length;
     }
   },
-  beforeCreate() {
-      eventBus.$on('addToCart', (data) => {
-        // console.log("adding product");
-        Cart.unshift(data);
-        console.log(Cart);
-      });
-   }
+  
 }
 </script>
 

@@ -38,7 +38,6 @@
 
 <script>
 
-import {eventBus} from './main.js';
 
 export default {
     props: [
@@ -53,18 +52,18 @@ export default {
             
         }
     },
-     methods:{
-      addToCart(product) {
-        eventBus.$emit('addToCart', product);
-      },
-      addToCart(product){
-          this.productQuantity--;
-          eventBus.$emit('addToCart',product);
-          if(this.productQuantity < 0){
-              this.productQuantity=0;
-              alert('This product is not available at the moment');
-          }
-        },
+     methods:{ 
+         addToCart(myProduct){
+             this.$store.commit('addToCart', myProduct)
+         }
+    //   addToCart(product){
+    //       this.productQuantity--;
+    //       eventBus.$emit('addToCart',product);
+    //       if(this.productQuantity == 0){
+    //           this.productQuantity=0;
+    //           alert('This product is not available at the moment');
+    //       }
+    //     },
     }
 }
 </script>
