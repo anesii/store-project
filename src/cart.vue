@@ -49,6 +49,12 @@
   <div class="total" v-if="totalAmount">
     <div> Total : &#8358;{{totalAmount}}</div>
   </div>
+    <div class="pop">
+        <div class="pop-up" v-if="isPopped"> Check Out Successful!</div>
+    </div>
+    <div>
+        <button class="btn btn-block btn-primary" @click="start" v-if="bigCart.length > 0"> Check Out </button>
+    </div>
  </div>
  
 </template>
@@ -60,7 +66,7 @@ export default {
    name: 'Cart',
    data() {
     return {
-      
+      isPopped: false
      }
   },
   computed: {
@@ -93,7 +99,18 @@ export default {
     },
     removeProduct(cart){
         this.$store.commit('removeProduct', cart)
-    }
+    },
+    start () {
+          this.$confetti.start()
+          this.isPopped = !this.isPopped
+          
+          setTimeout(() => {
+              this.$confetti.stop()
+            //   this.isPopped = !this.isPopped
+          }, 1500);
+        var cart = this.bigCart;
+        cart.splice(cart);
+	    },
     }
 }
 </script>
@@ -126,5 +143,21 @@ export default {
 .mdi-plus-box, .mdi-minus-box{
    color: black;
    cursor:pointer;
+}
+.pop-up{
+    border: 1px solid black;
+    border-radius: 50px;
+    color: darkslategray;
+    background-color: whitesmoke;
+    font-weight: bold;
+    font-size:35px;
+    padding: 50px;
+    width:50%;
+}
+.pop{
+    display: flex;
+    position: absolute;
+    left: 25rem;
+    width:50%;
 }
 </style>

@@ -14,6 +14,7 @@ state :{
                 quantity: 10,
                 stock:0,
                 img: require('./assets/img/phone1.jpg'),
+                description: ['Touch Screen', 'Curved Screen', 'Bluetooth', 'WiFi1']
             },
             {
                 id: 2,
@@ -23,6 +24,7 @@ state :{
                 quantity: 10,
                 stock:0,
                 img: require('./assets/img/phone2.jpg'),
+                description: ['Touch Screen', 'Curved Screen', 'Bluetooth', 'WiFi2']
             },
             {
                 id: 3,
@@ -31,7 +33,8 @@ state :{
                 category: 'phone',
                 quantity: 10,
                 stock:0,
-            img: require('./assets/img/phone3.jpg'),
+                img: require('./assets/img/phone3.jpg'),
+                description: ['Touch Screen', 'Curved Screen', 'Bluetooth', 'WiFi3']
             },
             {
                 id: 4,
@@ -40,7 +43,8 @@ state :{
                 category: 'phone',
                 quantity: 10,
                 stock:0,
-            img: require('./assets/img/phone4.jpg'),
+                img: require('./assets/img/phone4.jpg'),
+                description: ['Touch Screen', 'Curved Screen', 'Bluetooth', 'WiFi4']
             },
             {
                 id: 5,
@@ -50,6 +54,7 @@ state :{
                 quantity: 10,
                 stock:0,
                 img: require('./assets/img/phone5.jpg'),
+                description: ['Touch Screen', 'Curved Screen', 'Bluetooth', 'WiFi5']
             },
             {
                 id: 6,
@@ -58,7 +63,8 @@ state :{
                 category: 'notebook',
                 quantity: 10,
                 stock:0,
-            img: require('./assets/img/laptop1.jpg'),
+                img: require('./assets/img/laptop1.jpg'),
+                description: ['Touch Screen', 'Curved Screen', 'Bluetooth', 'WiFi6']
             },
             {
                 id: 7,
@@ -68,6 +74,7 @@ state :{
                 quantity: 10,
                 stock:0,
                 img: require('./assets/img/laptop2.jpg'),
+                description: ['Touch Screen', 'Curved Screen', 'Bluetooth', 'WiFi7']
             },
             {
             id: 8,
@@ -76,7 +83,8 @@ state :{
                 category: 'notebook',
                 quantity: 10,
                 stock:0,
-            img: require('./assets/img/laptop3.jpg'), 
+                img: require('./assets/img/laptop3.jpg'), 
+                description: ['Touch Screen', 'Curved Screen', 'Bluetooth', 'WiFi8']
             },
             {
                 id: 9,
@@ -86,6 +94,7 @@ state :{
                 quantity: 10,
                 stock:0,
                 img: require('./assets/img/laptop4.jpg'),
+                description: ['Touch Screen', 'Curved Screen', 'Bluetooth', 'WiFi9']
             },
             {
                 id: 10,
@@ -95,6 +104,7 @@ state :{
                 quantity: 10,
                 stock:0,
                 img: require('./assets/img/laptop5.jpg'),
+                description: ['Touch Screen', 'Curved Screen', 'Bluetooth', 'WiFi10']
             },
         ],
         bigCart: [],

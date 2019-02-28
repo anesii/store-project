@@ -6,11 +6,13 @@ import Routes from './routes'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import {store} from './product.js'
+import VueConfetti from 'vue-confetti';
 
 Vue.config.productionTip = false
 
 Vue.use(VueResource);
 Vue.use(VueRouter);
+Vue.use(VueConfetti);
 
 export const eventBus = new Vue();
 

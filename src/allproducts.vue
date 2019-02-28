@@ -8,7 +8,8 @@
                    :productQuantity="product.quantity"
                     :productImg="product.img"
                      :myProduct="product"
-                      :stock="product.stock"/>
+                      :stock="product.stock"
+                        :productDescription="product.description" />
             </div>
         </div>
     </div>

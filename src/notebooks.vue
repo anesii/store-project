@@ -7,7 +7,8 @@
                   :productPrice="product.price"
                    :productQuantity="product.quantity"
                     :productImg="product.img"
-                     :myProduct="product"/>
+                     :myProduct="product"
+                        :productDescription="product.description" />
             </div>
         </div>
     </div>

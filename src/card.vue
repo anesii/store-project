@@ -3,7 +3,18 @@
   <div>
       <div class="row justify-content-center">
           <div class="col">
-              <div class="product-img m-2" :style="{ backgroundImage: `url(${productImg})` }"></div>
+              <div class="product-img m-2" :style="{ backgroundImage: `url(${productImg})` }">
+                  <div class="overlay rounded p-5 m-5 shadow-sm">
+                    <div class="text"> 
+                        <div class="feat ml-4">
+                        Features: 
+                        </div>
+                            <ul>
+                                <li v-for="item in productDescription" :key="item.id">{{item}}</li>
+                            </ul> 
+                    </div>
+                </div>
+              </div>
           </div>
       </div>
       <div class="row">
@@ -45,7 +56,8 @@ export default {
         'productPrice',
         'productQuantity',
         'productImg',
-        'myProduct'
+        'myProduct',
+        'productDescription'
     ],
     data() {
         return {
@@ -74,10 +86,14 @@ export default {
        background-color: green;
        border: green;
        margin-top: 20px;
+       cursor: pointer;
    }
 
 .btn:hover{
     background-color: darkgreen;
+}
+button:active {
+  transform: translateY(2px);
 }
 
    .product-name{
@@ -94,8 +110,34 @@ export default {
        background-position: center, center;
        height: 270px;
    }
-/* 
-   .card-body{
-       padding: 0;
-   } */
+
+    .overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        z-index:5;
+        -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+        transform: scale(0);
+        -webkit-transition: .3s ease;
+        transition: .3s ease;
+        background-color: lightgray;
+}
+    .product-img:hover .overlay {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+        opacity:0.8;
+}
+    .text{
+        font-weight:bold;
+        font-size:20px;
+        align-content: center;
+        color: black;
+    }
+    
 </style>
